@@ -41,6 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AInternal.cs" />
+    <Compile Include="Generics\GenericsTests.cs" />
+    <Compile Include="HashTests\Tests.cs" />
+    <Compile Include="ObjectConstruction\E.cs" />
+    <Compile Include="Generics\GoodPerson.cs" />
+    <Compile Include="ObjectConstruction\F.cs" />
+    <Compile Include="OtherClass.cs" />
+    <Compile Include="OverloadingAndOverriding\A.cs" />
+    <Compile Include="OverloadingAndOverriding\B.cs" />
+    <Compile Include="OverloadingAndOverriding\C.cs" />
+    <Compile Include="OverloadingAndOverriding\I.cs" />
+    <Compile Include="Generics\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
