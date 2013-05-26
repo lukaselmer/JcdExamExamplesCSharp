@@ -12,17 +12,59 @@ namespace Exam
 {
     class Program
     {
+        //given
+        internal class CData
+        {
+            public int Id;
+            public string Name;
+        }
+
+        // given
+        internal class OrderInDescId
+        {
+            public static bool IsLessThen(CData o, CData o1)
+            {
+                return o.Id < o1.Id;
+            }
+        }
+
+        // given
+        internal class OrderInAlphName
+        {
+            public static bool IsLessThen(CData o, CData o1)
+            {
+                return String.CompareOrdinal(o.Name, o1.Name) != 0;
+            }
+        }
+
+        //given
+        private static void Quicksort(CData[] arr, SortingCreterion sortingCreterion)
+        {
+            Array.Sort(arr, (a, b) => sortingCreterion(a, b) ? -1 : 1);
+        }
+
+
+        private delegate bool SortingCreterion(CData a, CData b);
+
+
         static void Main(string[] args)
         {
+            SortingCreterion s1 = OrderInDescId.IsLessThen;
+            SortingCreterion s2 = OrderInAlphName.IsLessThen;
+
+            var arr = new CData[33];
+            Quicksort(arr, s1);
+            Quicksort(arr, s2);
+
             /*OtherClassTest();
             StringTests();
             DivisionByZeroTests();
             GenericsTests.BasicTest();
             OverrideOverloadTests();*/
 
-            GenericsTests.GenericsClassTests();
+            //GenericsTests.GenericsClassTests();
 
-            HashTests.Tests.DoIt();
+            //HashTests.Tests.DoIt();
 
             Console.ReadLine();
         }
@@ -39,7 +81,7 @@ namespace Exam
             try
             {
                 var a = 0;
-                var x = 1/a;
+                var x = 1 / a;
             }
             catch (Exception ex)
             {
@@ -71,5 +113,5 @@ namespace Exam
             m.Whatever();
         }
     }
-    
+
 }
