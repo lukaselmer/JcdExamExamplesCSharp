@@ -49,12 +49,15 @@ namespace Exam
 
         static void Main(string[] args)
         {
-            SortingCreterion s1 = OrderInDescId.IsLessThen;
+            var b = new Extended();
+            var b2 = new Extended();
+
+            /*SortingCreterion s1 = OrderInDescId.IsLessThen;
             SortingCreterion s2 = OrderInAlphName.IsLessThen;
 
             var arr = new CData[33];
             Quicksort(arr, s1);
-            Quicksort(arr, s2);
+            Quicksort(arr, s2);*/
 
             /*OtherClassTest();
             StringTests();
@@ -114,4 +117,29 @@ namespace Exam
         }
     }
 
+    internal class Extended : Base
+    {
+        private static Print p1 = new Print("ext1");
+        static Extended()
+        {
+            new Print("ext2");
+        }
+    }
+
+    internal class Base
+    {
+        static Base()
+        {
+            new Print("b2");
+        }
+        private static Print p1 = new Print("b1");
+    }
+
+    internal class Print
+    {
+        public Print(string p1)
+        {
+            Console.WriteLine(p1);
+        }
+    }
 }
